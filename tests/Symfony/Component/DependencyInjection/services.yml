@@ -1,0 +1,4 @@
+services:
+    person:
+        class: JurijVeresciaka\Laboratory\Tests\Symfony\Component\DependencyInjection\Person
+        arguments: ['Jurij', 'Veresciaka']
