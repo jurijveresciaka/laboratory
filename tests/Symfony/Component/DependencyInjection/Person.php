@@ -2,8 +2,6 @@
 
 namespace JurijVeresciaka\Laboratory\Tests\Symfony\Component\DependencyInjection;
 
-use JurijVeresciaka\Laboratory\Tests\Symfony\Component\DependencyInjection\CreditCard;
-
 class Person
 {
     /**
