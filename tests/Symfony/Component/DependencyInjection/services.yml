@@ -1,4 +1,12 @@
+parameters:
+    person.first_name: 'Jurij'
+    person.second_name: 'Veresciaka'
+    credit_card.unique_number: '123456789'
+
 services:
+    credit_card:
+        class: JurijVeresciaka\Laboratory\Tests\Symfony\Component\DependencyInjection\CreditCard
+        arguments: ["%credit_card.unique_number%"]
     person:
         class: JurijVeresciaka\Laboratory\Tests\Symfony\Component\DependencyInjection\Person
-        arguments: ['Jurij', 'Veresciaka']
+        arguments: ["%person.first_name%", "%person.second_name%", @credit_card]

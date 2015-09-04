@@ -14,6 +14,12 @@ class ContainerBuilderTest extends \PHPUnit_Framework_TestCase
         $loader = new YamlFileLoader($container, new FileLocator(__DIR__));
         $loader->load('services.yml');
 
-        var_dump($container->get('person'));
+        $person = new Person(
+            'Jurij',
+            'Veresciaka',
+            new CreditCard('123456789')
+        );
+
+        $this->assertEquals($person, $container->get('person'));
     }
 }

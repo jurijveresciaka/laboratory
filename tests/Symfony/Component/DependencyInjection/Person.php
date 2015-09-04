@@ -2,6 +2,8 @@
 
 namespace JurijVeresciaka\Laboratory\Tests\Symfony\Component\DependencyInjection;
 
+use JurijVeresciaka\Laboratory\Tests\Symfony\Component\DependencyInjection\CreditCard;
+
 class Person
 {
     /**
@@ -15,13 +17,20 @@ class Person
     protected $secondName;
 
     /**
+     * @var CreditCard
+     */
+    protected $creditCard;
+
+    /**
      * @param string $firstName
      * @param string $secondName
+     * @param CreditCard $creditCard
      */
-    public function __construct($firstName, $secondName)
+    public function __construct($firstName, $secondName, $creditCard)
     {
         $this->firstName = $firstName;
         $this->secondName = $secondName;
+        $this->creditCard = $creditCard;
     }
 
     /**
@@ -54,5 +63,21 @@ class Person
     public function getSecondName()
     {
         return $this->secondName;
+    }
+
+    /**
+     * @param CreditCard $creditCard
+     */
+    public function setCreditCard($creditCard)
+    {
+        $this->creditCard = $creditCard;
+    }
+
+    /**
+     * @return CreditCard
+     */
+    public function getCreditCard()
+    {
+        return $this->creditCard;
     }
 }
