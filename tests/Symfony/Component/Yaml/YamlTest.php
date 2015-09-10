@@ -28,7 +28,7 @@ class YamlTest extends \PHPUnit_Framework_TestCase
 a_b_c: 'a b c'
 'a b c': a_b_c
 'boolean': true
-'date': 2015-08-29
+'date': 2015-08-29T00:00:00Z
 'date string': '2015-08-29'
 'array':
     - a
