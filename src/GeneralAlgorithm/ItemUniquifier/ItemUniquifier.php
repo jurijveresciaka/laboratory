@@ -27,11 +27,7 @@ class ItemUniquifier
         $uniquifiedItemList = array();
 
         foreach ($itemList as $index => $item) {
-            if ($itemCountList[$item] > 1) {
-                $uniquifiedItemList[] = $itemIndexList[$index] . '_' . $item;
-            } else {
-                $uniquifiedItemList[] = $item;
-            }
+            $uniquifiedItemList[] = $itemCountList[$item] > 1 ? $itemIndexList[$index] . '_' . $item : $item;
         }
 
         return $uniquifiedItemList;
