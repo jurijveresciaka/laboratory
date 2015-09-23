@@ -2,23 +2,23 @@
 
 namespace JurijVeresciaka\Laboratory\Tests\ItemUniquifier;
 
-use JurijVeresciaka\Laboratory\GeneralAlgorithm\ItemUniquifier\ItemUniquifier;
+use JurijVeresciaka\Laboratory\GeneralAlgorithm\ItemUniquifier\ItemUniquifierOne;
 
-class ItemUniquifierTest extends \PHPUnit_Framework_TestCase
+class ItemUniquifierOneTest extends \PHPUnit_Framework_TestCase
 {
     /**
-     * @var ItemUniquifier
+     * @var ItemUniquifierOne
      */
     protected $itemUniquifier;
 
     protected function setUp()
     {
-        $this->itemUniquifier = new ItemUniquifier();
+        $this->itemUniquifier = new ItemUniquifierOne();
     }
 
     /**
      * @param string[] $expectedUniquifiedItemList
-     * @param string $itemList
+     * @param string[] $itemList
      *
      * @dataProvider providerUniquify
      */

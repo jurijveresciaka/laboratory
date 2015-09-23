@@ -2,7 +2,7 @@
 
 namespace JurijVeresciaka\Laboratory\GeneralAlgorithm\ItemUniquifier;
 
-class ItemUniquifier
+class ItemUniquifierTwo
 {
     /**
      * @param string[] $itemList
@@ -12,7 +12,8 @@ class ItemUniquifier
     public function uniquify($itemList)
     {
         $itemCountList = array();
-        $itemIndexList = array();
+
+        $uniquifiedItemList = array();
 
         foreach ($itemList as $item) {
             if (!isset($itemCountList[$item])) {
@@ -21,13 +22,7 @@ class ItemUniquifier
                 $itemCountList[$item] += 1;
             }
 
-            $itemIndexList[] = $itemCountList[$item];
-        }
-
-        $uniquifiedItemList = array();
-
-        foreach ($itemList as $index => $item) {
-            $uniquifiedItemList[] = $itemCountList[$item] > 1 ? $itemIndexList[$index] . '_' . $item : $item;
+            $uniquifiedItemList[] = $itemCountList[$item] > 1 ? $item . '_' . $itemCountList[$item] : $item;
         }
 
         return $uniquifiedItemList;
